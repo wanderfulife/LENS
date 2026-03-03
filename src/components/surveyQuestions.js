@@ -11,8 +11,8 @@ export const templateSurveyQuestions = [
         note: "L'enquêteur peut pré-remplir directement cette question sans avoir à la poser. Cibler les montants en priorité.",
         options: [
             { id: 1, text: "Je vais prendre le train", next: "Q2" },
-            { id: 2, text: "J'accompagne des voyageurs qui partent / J'attends des voyageurs qui arrivent", next: "Q9" },
-            { id: 3, text: "Autre raison (achat billet, commerces en gare…)", next: "Q9" }
+            { id: 2, text: "J'accompagne des voyageurs qui partent / J'attends des voyageurs qui arrivent", next: "Q9_nv" },
+            { id: 3, text: "Autre raison (achat billet, commerces en gare…)", next: "Q9_nv" }
         ]
     },
 
@@ -290,11 +290,12 @@ export const templateSurveyQuestions = [
         type: 'multipleChoice',
         note: "Question spéciale pour les gares du périmètre TADAO – plusieurs réponses possibles.",
         options: [
-            { id: 1, text: "Je prends davantage le train pour mes déplacements professionnels", next: "Q9" },
-            { id: 2, text: "Je prends davantage le train pour mes déplacements personnels", next: "Q9" },
-            { id: 3, text: "Je fais davantage de correspondance bus-train", next: "Q9" },
-            { id: 4, text: "Autre", next: "Q8a_Autre" }
-        ]
+            { id: 1, text: "Je prends davantage le train pour mes déplacements professionnels" },
+            { id: 2, text: "Je prends davantage le train pour mes déplacements personnels" },
+            { id: 3, text: "Je fais davantage de correspondance bus-train" },
+            { id: 4, text: "Autre", next_if_selected: "Q8a_Autre" }
+        ],
+        next: "Q9"
     },
 
     // 📝 Q8a - Autre précision gratuité TER
